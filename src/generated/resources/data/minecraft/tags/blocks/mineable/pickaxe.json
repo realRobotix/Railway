@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "railways:track_coupler",
     "railways:track_acacia",
@@ -10,9 +11,6 @@
     "railways:track_spruce",
     "railways:track_warped",
     "railways:track_blackstone",
-    "railways:track_mangrove",
-    "railways:track_ender",
-    "railways:track_tieless",
     "railways:track_monorail",
     "railways:mono_bogey",
     "railways:mono_bogey_upside_down",

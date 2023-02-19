@@ -173,7 +173,6 @@ public class CRBlocks {
     public static final BlockEntry<CustomTrackBlock> SPRUCE_TRACK = makeTrack(TrackMaterial.SPRUCE);
     public static final BlockEntry<CustomTrackBlock> WARPED_TRACK = makeTrack(TrackMaterial.WARPED);
     public static final BlockEntry<CustomTrackBlock> BLACKSTONE_TRACK = makeTrack(TrackMaterial.BLACKSTONE);
-    public static final BlockEntry<CustomTrackBlock> MANGROVE_TRACK = makeTrack(TrackMaterial.MANGROVE);
     public static final BlockEntry<CustomTrackBlock> ENDER_TRACK = makeTrack(TrackMaterial.ENDER);
     public static final BlockEntry<CustomTrackBlock> TIELESS_TRACK = makeTrack(TrackMaterial.TIELESS);
 
@@ -201,7 +200,7 @@ public class CRBlocks {
             .properties(p -> p.noOcclusion())
             .properties(p -> p.sound(SoundType.WOOD))
             .properties(p -> p.instabreak())
-            .properties(p -> p.noLootTable())
+            .properties(p -> p.noDrops())
             .properties(p -> p.noCollission())
             .blockstate((c, p) -> p.getVariantBuilder(c.get())
                 .forAllStates(state -> ConfiguredModel.builder()
