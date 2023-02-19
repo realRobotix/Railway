@@ -3,12 +3,9 @@
   "ingredient": {
     "item": "minecraft:glass_pane"
   },
-  "loops": 1,
-  "results": [
-    {
-      "item": "railways:track_tieless"
-    }
-  ],
+  "transitionalItem": {
+    "item": "railways:track_incomplete_tieless"
+  },
   "sequence": [
     {
       "type": "create:deploying",
@@ -66,7 +63,10 @@
       ]
     }
   ],
-  "transitionalItem": {
-    "item": "railways:track_incomplete_tieless"
-  }
+  "results": [
+    {
+      "item": "railways:track_tieless"
+    }
+  ],
+  "loops": 1
 }

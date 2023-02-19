@@ -13,9 +13,14 @@
         {
           "item": "railways:track_incomplete_blackstone"
         },
-        {
-          "item": "minecraft:gold_nugget"
-        }
+        [
+          {
+            "tag": "forge:nuggets/iron"
+          },
+          {
+            "tag": "forge:nuggets/zinc"
+          }
+        ]
       ],
       "results": [
         {
@@ -29,9 +34,14 @@
         {
           "item": "railways:track_incomplete_blackstone"
         },
-        {
-          "item": "minecraft:gold_nugget"
-        }
+        [
+          {
+            "tag": "forge:nuggets/iron"
+          },
+          {
+            "tag": "forge:nuggets/zinc"
+          }
+        ]
       ],
       "results": [
         {

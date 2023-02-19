@@ -3,12 +3,9 @@
   "ingredient": {
     "item": "minecraft:end_stone_brick_slab"
   },
-  "loops": 1,
-  "results": [
-    {
-      "item": "railways:track_ender"
-    }
-  ],
+  "transitionalItem": {
+    "item": "railways:track_incomplete_ender"
+  },
   "sequence": [
     {
       "type": "create:deploying",
@@ -66,7 +63,10 @@
       ]
     }
   ],
-  "transitionalItem": {
-    "item": "railways:track_incomplete_ender"
-  }
+  "results": [
+    {
+      "item": "railways:track_ender"
+    }
+  ],
+  "loops": 1
 }
