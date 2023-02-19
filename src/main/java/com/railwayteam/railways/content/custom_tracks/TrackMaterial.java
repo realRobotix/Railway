@@ -37,7 +37,7 @@ public enum TrackMaterial {
     BLACKSTONE("Blackstone", Lazy.of(() -> CRBlocks.BLACKSTONE_TRACK), new ResourceLocation("block/blackstone"), Ingredient.of(Blocks.BLACKSTONE_SLAB), Ingredient.of(Items.GOLD_NUGGET)),
     MANGROVE("Mangrove", Lazy.of(() -> CRBlocks.MANGROVE_TRACK), new ResourceLocation("block/mangrove_planks"), Ingredient.of(Blocks.MANGROVE_SLAB)),
     ENDER("Ender", Lazy.of(() -> CRBlocks.ENDER_TRACK), new ResourceLocation("block/end_stone"), Ingredient.of(Blocks.END_STONE_BRICK_SLAB)),
-    TIELESS("Tieless", Lazy.of(() -> CRBlocks.TIELESS_TRACK), new ResourceLocation("block/glass_pane"), Ingredient.of(Blocks.GLASS_PANE)),
+    TIELESS("Tieless", Lazy.of(() -> CRBlocks.TIELESS_TRACK), new ResourceLocation("block/glass"), Ingredient.of(Blocks.GLASS_PANE)),
 
     MONORAIL("Monorail", Lazy.of(() -> CRBlocks.MONORAIL_TRACK), Railways.asResource("block/monorail/monorail"), Ingredient.EMPTY, Ingredient.EMPTY, false, TrackType.MONORAIL)
     ;
