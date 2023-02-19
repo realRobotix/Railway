@@ -11,10 +11,14 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -66,5 +70,12 @@ public class CustomTrackBlock extends TrackBlock implements IHasTrackMaterial {
       }
     }
     return null;
+  }
+
+  @Override
+  public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+    if (material.isNoCollision())
+      return Shapes.empty();
+    return super.getCollisionShape(pState, pLevel, pPos, pContext);
   }
 }

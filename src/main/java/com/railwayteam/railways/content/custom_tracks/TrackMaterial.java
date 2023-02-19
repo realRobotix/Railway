@@ -41,6 +41,10 @@ public enum TrackMaterial {
     MONORAIL("Monorail", Lazy.of(() -> CRBlocks.MONORAIL_TRACK), Railways.asResource("block/monorail/monorail"), Ingredient.EMPTY, Ingredient.EMPTY, false, TrackType.MONORAIL)
     ;
 
+    static {
+        TIELESS.noCollision();
+    }
+
     public final String langName;
     public final Supplier<BlockEntry<? extends TrackBlock>> trackBlock; //replace with supplier
     public final boolean createBuiltin;
@@ -48,6 +52,7 @@ public enum TrackMaterial {
     public final Ingredient railsIngredient;
     public final ResourceLocation particle;
     public final TrackType trackType;
+    private boolean noCollision;
 
     TrackMaterial(String langName, Supplier<BlockEntry<? extends TrackBlock>> trackBlock, ResourceLocation particle, ItemLike... items) {
         this(langName, trackBlock, particle, Ingredient.of(items));
@@ -77,11 +82,22 @@ public enum TrackMaterial {
         this.trackType = trackType;
     }
 
+    public boolean isNoCollision() {
+        return noCollision;
+    }
+
+    private TrackMaterial noCollision() {
+        this.noCollision = true;
+        return this;
+    }
+
     public BlockEntry<? extends TrackBlock> getTrackBlock() {
         return this.trackBlock.get();
     }
 
     public CustomTrackBlock create(BlockBehaviour.Properties properties) {
+        if (isNoCollision())
+            properties = properties.noCollission();
         return switch (this.trackType) {
             case MONORAIL -> new MonorailTrackBlock(properties, this);
             case STANDARD -> new CustomTrackBlock(properties, this);
