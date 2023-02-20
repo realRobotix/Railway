@@ -43,7 +43,6 @@ public class CRItems {
   }
 
   public static final TagKey<Item> CONDUCTOR_CAPS = CRTags.AllItemTags.CONDUCTOR_CAPS.tag;//makeItemTag(Railways.MODID, "conductor_caps");
-
   public static TagKey<Item> makeForgeItemTag(String path) {
     return makeItemTag("forge", path);
   }

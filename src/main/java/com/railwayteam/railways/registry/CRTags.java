@@ -88,6 +88,7 @@ public class CRTags {
       }
     }
 
+
     @SuppressWarnings("deprecation")
     public boolean matches(Block block) {
       return block.builtInRegistryHolder()
@@ -143,7 +144,8 @@ public class CRTags {
   }
 
   public enum AllItemTags {
-    CONDUCTOR_CAPS
+    CONDUCTOR_CAPS,
+    PHANTOM_MEMBRANES,
     ;
 
     public final TagKey<Item> tag;

@@ -11,6 +11,8 @@ import com.simibubi.create.content.contraptions.itemAssembly.SequencedAssemblyRe
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumMap;
@@ -59,6 +61,14 @@ public class RailwaysSequencedAssemblyRecipeGen extends RailwaysRecipeProvider {
       ));
     }
 
+    TRACKS.put(TrackMaterial.PHANTOM, create("track_phantom", b -> b.require(Ingredient.of(Items.PHANTOM_MEMBRANE))
+                    .transitionTo(CRItems.ITEM_INCOMPLETE_TRACK.get(TrackMaterial.PHANTOM).get())
+                    .addOutput(new ItemStack(TrackMaterial.PHANTOM.getTrackBlock().get(), 32), 1)
+                    .loops(1)
+                    .addStep(DeployerApplicationRecipe::new, rb -> rb.require(Ingredients.ironNugget()))
+                    .addStep(DeployerApplicationRecipe::new, rb -> rb.require(Ingredients.ironNugget()))
+                    .addStep(PressingRecipe::new, rb -> rb)
+    ));
     TRACKS.put(TrackMaterial.MONORAIL, create("track_monorail", b -> b.require(Ingredients.girder())
         .transitionTo(CRItems.ITEM_INCOMPLETE_TRACK.get(TrackMaterial.MONORAIL).get())
         .addOutput(new ItemStack(TrackMaterial.MONORAIL.getTrackBlock().get(), 6), 1)
