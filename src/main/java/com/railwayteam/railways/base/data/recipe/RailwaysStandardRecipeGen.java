@@ -61,10 +61,8 @@ public class RailwaysStandardRecipeGen extends RailwaysRecipeProvider {
     GeneratedRecipe DIESEL_STACK = create(CRBlocks.DIESEL_STACK)
         .unlockedBy(() -> Blocks.CAMPFIRE)
         .viaShaped(b -> b.define('#', AllItems.IRON_SHEET.get())
-            .define('+', Blocks.CAMPFIRE)
             .define('*', AllItems.PROPELLER.get())
             .pattern("#*#")
-            .pattern(" + ")
         );
 
     GeneratedRecipe CABOOSE_STACK = create(CRBlocks.CABOOSESTYLE_STACK)
@@ -99,6 +97,12 @@ public class RailwaysStandardRecipeGen extends RailwaysRecipeProvider {
             .pattern(".#.")
             .pattern("#+#")
         );
+    GeneratedRecipe LONG_STACK = create(CRBlocks.LONG_STACK)
+            .unlockedBy(() -> Blocks.CAMPFIRE)
+            .viaShaped(b -> b.define('+', Blocks.CAMPFIRE)
+                    .define('.', Items.IRON_NUGGET)
+                    .pattern(".+.")
+            );
 
     GeneratedRecipeBuilder create(Supplier<ItemLike> result) {
         return new GeneratedRecipeBuilder("/", result);

@@ -66,6 +66,9 @@ public class CRShapes {
         CABOOSE_STACK = shape(7, 0, 7, 9, 12, 9)
             .add(5, 8, 6, 11, 12, 10)
             .forHorizontalAxis();
+    public static final VoxelShaper
+        LONG_STACK = shape(1, 0, 3, 15, 4, 13)
+            .forHorizontalAxis();
 
     private static Builder shape(VoxelShape shape) {
         return new Builder(shape);
