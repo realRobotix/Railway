@@ -44,6 +44,7 @@ public enum TrackMaterial {
 
     static {
         TIELESS.noCollision();
+        PHANTOM.noCollision();
     }
 
     public final String langName;
