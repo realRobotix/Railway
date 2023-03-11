@@ -1,55 +1,56 @@
-package com.railwayteam.railways.content.custom_bogeys.singleAxle;
+    package com.railwayteam.railways.content.custom_bogeys.singleAxle;
 
-import com.jozufozu.flywheel.api.MaterialManager;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Vector3f;
-import com.railwayteam.railways.content.custom_bogeys.IPotentiallyUpsideDownBogeyBlock;
-import com.railwayteam.railways.mixin.AccessorCarriageBogey;
-import com.railwayteam.railways.mixin_interfaces.IBogeyFrameCanBeMonorail;
-import com.railwayteam.railways.registry.CRBlockEntities;
-import com.railwayteam.railways.registry.CRBlockPartials;
-import com.railwayteam.railways.registry.CRBlocks;
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.logistics.trains.entity.BogeyInstance;
-import com.simibubi.create.content.logistics.trains.entity.CarriageBogey;
-import com.simibubi.create.content.schematics.ISpecialBlockItemRequirement;
-import com.simibubi.create.content.schematics.ItemRequirement;
-import com.simibubi.create.foundation.block.ITE;
-import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
-import com.simibubi.create.foundation.render.CachedBufferer;
-import com.simibubi.create.foundation.utility.Iterate;
-import net.minecraft.MethodsReturnNonnullByDefault;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+    import com.jozufozu.flywheel.api.MaterialManager;
+    import com.mojang.blaze3d.vertex.PoseStack;
+    import com.mojang.blaze3d.vertex.VertexConsumer;
+    import com.mojang.math.Vector3f;
+    import com.railwayteam.railways.content.custom_bogeys.IPotentiallyUpsideDownBogeyBlock;
+    import com.railwayteam.railways.mixin.AccessorCarriageBogey;
+    import com.railwayteam.railways.mixin_interfaces.IBogeyFrameCanBeMonorail;
+    import com.railwayteam.railways.registry.CRBlockEntities;
+    import com.railwayteam.railways.registry.CRBlockPartials;
+    import com.railwayteam.railways.registry.CRBlocks;
+    import com.simibubi.create.AllBlockPartials;
+    import com.simibubi.create.AllBlocks;
+    import com.simibubi.create.content.logistics.trains.entity.BogeyInstance;
+    import com.simibubi.create.content.logistics.trains.entity.CarriageBogey;
+    import com.simibubi.create.content.schematics.ISpecialBlockItemRequirement;
+    import com.simibubi.create.content.schematics.ItemRequirement;
+    import com.simibubi.create.foundation.block.ITE;
+    import com.simibubi.create.foundation.block.ProperWaterloggedBlock;
+    import com.simibubi.create.foundation.render.CachedBufferer;
+    import com.simibubi.create.foundation.utility.Iterate;
+    import net.minecraft.MethodsReturnNonnullByDefault;
+    import net.minecraft.client.renderer.MultiBufferSource;
+    import net.minecraft.client.renderer.RenderType;
+    import net.minecraft.core.BlockPos;
+    import net.minecraft.core.Direction;
+    import net.minecraft.world.entity.player.Player;
+    import net.minecraft.world.item.ItemStack;
+    import net.minecraft.world.level.BlockGetter;
+    import net.minecraft.world.level.LevelAccessor;
+    import net.minecraft.world.level.block.Block;
+    import net.minecraft.world.level.block.Blocks;
+    import net.minecraft.world.level.block.Rotation;
+    import net.minecraft.world.level.block.entity.BlockEntity;
+    import net.minecraft.world.level.block.entity.BlockEntityType;
+    import net.minecraft.world.level.block.state.BlockState;
+    import net.minecraft.world.level.block.state.StateDefinition;
+    import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+    import net.minecraft.world.level.block.state.properties.EnumProperty;
+    import net.minecraft.world.level.material.FluidState;
+    import net.minecraft.world.phys.HitResult;
+    import net.minecraft.world.phys.Vec3;
+    import net.minecraftforge.api.distmarker.Dist;
+    import net.minecraftforge.api.distmarker.OnlyIn;
+    import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.EnumSet;
+    import javax.annotation.ParametersAreNonnullByDefault;
+    import java.util.EnumSet;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
-public class SingleAxleBogeyBlock extends Block implements IPotentiallyUpsideDownBogeyBlock, ITE<SingleAxleBogeyTileEntity>, ProperWaterloggedBlock, ISpecialBlockItemRequirement {
+    @MethodsReturnNonnullByDefault
+    @ParametersAreNonnullByDefault
+    public class SingleAxleBogeyBlock extends Block implements IPotentiallyUpsideDownBogeyBlock, ITE<SingleAxleBogeyTileEntity>, ProperWaterloggedBlock, ISpecialBlockItemRequirement {
 
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
 
@@ -152,25 +153,18 @@ public class SingleAxleBogeyBlock extends Block implements IPotentiallyUpsideDow
 
     private void renderBogey(float wheelAngle, PoseStack ms, int light, VertexConsumer vb, BlockState air, boolean renderUpsideDown) {
         CachedBufferer.partial(CRBlockPartials.SINGLEAXLE_FRAME, air)
-                .rotateZ(renderUpsideDown ? 180 : 0)
+                .translate(0, 3 / 16f, 0)
                 .scale(1 - 1 / 512f)
                 .light(light)
                 .renderInto(ms, vb);
 
-//        wheelAngle = (Minecraft.getInstance().level.getGameTime() % 40) / 40f * 360;
-
-        for (boolean left : Iterate.trueAndFalse) {
-            for (int front : Iterate.positiveAndNegative) {
-                ms.pushPose();
-                CachedBufferer.partial(CRBlockPartials.SINGLEAXLE_WHEEL, air)
-                        .translate(left ? -12 / 16f : 12 / 16f, renderUpsideDown ? -13 /16f : 3 / 16f, front * 15 / 16f) //base position
-                        .rotateY(left ? wheelAngle : -wheelAngle)
-                        .translate(15/16f, 0, 0/16f)
-                        .light(light)
-                        .renderInto(ms, vb);
-                ms.popPose();
-            }
-        }
+            ms.pushPose();
+            CachedBufferer.partial(CRBlockPartials.SINGLEAXLE_WHEEL, air)
+                    .translate(0, 2.5 / 16f, 0)
+                    .rotateX(wheelAngle)
+                    .light(light)
+                    .renderInto(ms, vb);
+            ms.popPose();
     }
 
     @Override
@@ -216,4 +210,4 @@ public class SingleAxleBogeyBlock extends Block implements IPotentiallyUpsideDow
     public BlockState getRotatedBlockState(BlockState state, Direction targetedFace) {
         return state;
     }
-}
+    }
