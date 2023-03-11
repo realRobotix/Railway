@@ -4,6 +4,6 @@
 	"flip-v": true,
 	"model": "railways:models/block/bogey/singleaxle/wheel.obj",
 	"textures": {
-		"0": "railways:block/singleaxle/singleaxle_bogey"
+		"wheel": "railways:block/singleaxle/axletemplate"
 	}
 }

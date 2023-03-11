@@ -31,7 +31,7 @@ public class BuilderTransformers {
                 .properties(p -> p.noOcclusion())
                 .transform(pickaxeOnly())
                 .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, s -> p.models()
-                        .getExistingFile(p.modLoc("block/bogey/singleaxle/top" + (upsideDown ? "_upside_down" : "")))))
+                        .getExistingFile(p.modLoc("block/bogey/singleaxle/frame" + (upsideDown ? "_upside_down" : "")))))
                 .loot((p, l) -> p.dropOther(l, AllBlocks.RAILWAY_CASING.get()));
     }
 }

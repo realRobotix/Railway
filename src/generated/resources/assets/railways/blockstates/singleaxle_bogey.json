@@ -1,18 +1,18 @@
 {
   "variants": {
     "axis=x,waterlogged=false": {
-      "model": "railways:block/bogey/singleaxle/top",
+      "model": "railways:block/bogey/singleaxle/frame",
       "y": 90
     },
     "axis=z,waterlogged=false": {
-      "model": "railways:block/bogey/singleaxle/top"
+      "model": "railways:block/bogey/singleaxle/frame"
     },
     "axis=x,waterlogged=true": {
-      "model": "railways:block/bogey/singleaxle/top",
+      "model": "railways:block/bogey/singleaxle/frame",
       "y": 90
     },
     "axis=z,waterlogged=true": {
-      "model": "railways:block/bogey/singleaxle/top"
+      "model": "railways:block/bogey/singleaxle/frame"
     }
   }
 }
