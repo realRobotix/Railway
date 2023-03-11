@@ -1,6 +1,6 @@
 package com.railwayteam.railways.mixin;
 
-import com.railwayteam.railways.content.custom_bogeys.monobogey.IPotentiallyUpsideDownBogeyBlock;
+import com.railwayteam.railways.content.custom_bogeys.IPotentiallyUpsideDownBogeyBlock;
 import com.simibubi.create.content.contraptions.components.structureMovement.AssemblyException;
 import com.simibubi.create.content.logistics.trains.*;
 import com.simibubi.create.content.logistics.trains.entity.CarriageContraption;

@@ -1,5 +1,7 @@
 package com.railwayteam.railways.content.custom_tracks;
 
+import biomesoplenty.api.block.BOPBlocks;
+import biomesoplenty.core.BiomesOPlenty;
 import com.railwayteam.railways.Railways;
 import com.railwayteam.railways.base.data.recipe.RailwaysRecipeProvider.Ingredients;
 import com.railwayteam.railways.content.custom_tracks.monorail.MonorailTrackBlock;
@@ -35,8 +37,7 @@ public enum TrackMaterial {
     SPRUCE("Spruce", Lazy.of(() -> CRBlocks.SPRUCE_TRACK), new ResourceLocation("block/spruce_planks"), Blocks.SPRUCE_SLAB),
     WARPED("Warped", Lazy.of(() -> CRBlocks.WARPED_TRACK), new ResourceLocation("block/warped_planks"), Ingredient.of(Blocks.WARPED_SLAB), Ingredient.of(Items.GOLD_NUGGET)),
     BLACKSTONE("Blackstone", Lazy.of(() -> CRBlocks.BLACKSTONE_TRACK), new ResourceLocation("block/blackstone"), Ingredient.of(Blocks.BLACKSTONE_SLAB), Ingredient.of(Items.GOLD_NUGGET)),
-    MONORAIL("Monorail", Lazy.of(() -> CRBlocks.MONORAIL_TRACK), Railways.asResource("block/monorail/monorail"), Ingredient.EMPTY, Ingredient.EMPTY, false, TrackType.MONORAIL)
-    ;
+    MONORAIL("Monorail", Lazy.of(() -> CRBlocks.MONORAIL_TRACK), Railways.asResource("block/monorail/monorail"), Ingredient.EMPTY, Ingredient.EMPTY, false, TrackType.MONORAIL);
 
     public final String langName;
     public final Supplier<BlockEntry<? extends TrackBlock>> trackBlock; //replace with supplier

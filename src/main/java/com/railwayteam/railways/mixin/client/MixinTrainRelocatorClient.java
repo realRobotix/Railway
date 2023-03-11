@@ -1,7 +1,7 @@
 package com.railwayteam.railways.mixin.client;
 
 import com.railwayteam.railways.content.custom_bogeys.monobogey.MonoBogeyBlock;
-import com.railwayteam.railways.content.custom_bogeys.monobogey.IPotentiallyUpsideDownBogeyBlock;
+import com.railwayteam.railways.content.custom_bogeys.IPotentiallyUpsideDownBogeyBlock;
 import com.railwayteam.railways.mixin.AccessorCarriageBogey;
 import com.simibubi.create.CreateClient;
 import com.simibubi.create.content.logistics.trains.IBogeyBlock;

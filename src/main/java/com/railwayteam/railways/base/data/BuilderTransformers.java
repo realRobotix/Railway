@@ -1,6 +1,7 @@
 package com.railwayteam.railways.base.data;
 
 import com.railwayteam.railways.content.custom_bogeys.monobogey.MonoBogeyBlock;
+import com.railwayteam.railways.content.custom_bogeys.singleAxle.singleAxleBogeyBlock;
 import com.railwayteam.railways.registry.CRBlocks;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.Create;
@@ -23,5 +24,14 @@ public class BuilderTransformers {
             .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, s -> p.models()
                 .getExistingFile(p.modLoc("block/bogey/monorail/top" + (upsideDown ? "_upside_down" : "")))))
             .loot((p, l) -> p.dropOther(l, AllBlocks.RAILWAY_CASING.get()));
+    }
+    public static <B extends singleAxleBogeyBlock, P> NonNullUnaryOperator<BlockBuilder<B, P>> singleaxlebogey(boolean upsideDown) {
+        return b -> b.initialProperties(SharedProperties::softMetal)
+                .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
+                .properties(p -> p.noOcclusion())
+                .transform(pickaxeOnly())
+                .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, s -> p.models()
+                        .getExistingFile(p.modLoc("block/bogey/singleaxle/top" + (upsideDown ? "_upside_down" : "")))))
+                .loot((p, l) -> p.dropOther(l, AllBlocks.RAILWAY_CASING.get()));
     }
 }

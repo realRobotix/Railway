@@ -2,8 +2,7 @@ package com.railwayteam.railways.mixin.client;
 
 import com.jozufozu.flywheel.util.transform.TransformStack;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.railwayteam.railways.content.custom_bogeys.monobogey.IPotentiallyUpsideDownBogeyBlock;
-import com.railwayteam.railways.content.custom_bogeys.monobogey.MonoBogeyBlock;
+import com.railwayteam.railways.content.custom_bogeys.IPotentiallyUpsideDownBogeyBlock;
 import com.railwayteam.railways.mixin.AccessorCarriageBogey;
 import com.simibubi.create.content.logistics.trains.entity.CarriageBogey;
 import com.simibubi.create.content.logistics.trains.entity.CarriageContraptionEntityRenderer;

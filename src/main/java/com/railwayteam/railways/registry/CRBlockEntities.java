@@ -6,6 +6,7 @@ import com.railwayteam.railways.content.conductor.whistle.ConductorWhistleFlagTi
 import com.railwayteam.railways.content.coupling.coupler.TrackCouplerRenderer;
 import com.railwayteam.railways.content.coupling.coupler.TrackCouplerTileEntity;
 import com.railwayteam.railways.content.custom_bogeys.monobogey.MonoBogeyTileEntity;
+import com.railwayteam.railways.content.custom_bogeys.singleAxle.singleAxleBogeyTileEntity;
 import com.railwayteam.railways.content.semaphore.SemaphoreBlockEntity;
 import com.railwayteam.railways.content.semaphore.SemaphoreRenderer;
 import com.railwayteam.railways.content.smokestack.DieselSmokeStackRenderer;
@@ -38,6 +39,12 @@ public class CRBlockEntities {
         .renderer(() -> BogeyTileEntityRenderer::new)
         .validBlocks(CRBlocks.MONO_BOGEY, CRBlocks.MONO_BOGEY_UPSIDE_DOWN)
         .register();
+
+    public static final BlockEntityEntry<singleAxleBogeyTileEntity> SINGLEAXLE_BOGEY = REGISTRATE
+            .tileEntity("mono_bogey", singleAxleBogeyTileEntity::new)
+            .renderer(() -> BogeyTileEntityRenderer::new)
+            .validBlocks(CRBlocks.SINGLEAXLE_BOGEY)
+            .register();
 
     public static final BlockEntityEntry<ConductorWhistleFlagTileEntity> CONDUCTOR_WHISTLE_FLAG = REGISTRATE.tileEntity("conductor_whistle", ConductorWhistleFlagTileEntity::new)
         .validBlocks(CRBlocks.CONDUCTOR_WHISTLE_FLAG)

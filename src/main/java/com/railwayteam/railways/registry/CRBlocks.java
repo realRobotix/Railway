@@ -8,6 +8,7 @@ import com.railwayteam.railways.content.coupling.TrackCouplerDisplaySource;
 import com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlock;
 import com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockItem;
 import com.railwayteam.railways.content.custom_bogeys.monobogey.MonoBogeyBlock;
+import com.railwayteam.railways.content.custom_bogeys.singleAxle.singleAxleBogeyBlock;
 import com.railwayteam.railways.content.custom_tracks.CustomTrackBlock;
 import com.railwayteam.railways.content.custom_tracks.CustomTrackBlockStateGenerator;
 import com.railwayteam.railways.content.custom_tracks.TrackMaterial;
@@ -189,6 +190,14 @@ public class CRBlocks {
             .transform(BuilderTransformers.monobogey(true))
             .lang("Upside Down Monorail Bogey")
             .register();
+
+    public static final BlockEntry<singleAxleBogeyBlock> SINGLEAXLE_BOGEY =
+            REGISTRATE.block("singleaxle_bogey", p -> new singleAxleBogeyBlock(p, false))
+                    .properties(p -> p.color(MaterialColor.PODZOL))
+                    .transform(BuilderTransformers.singleaxlebogey(false))
+                    .lang("Single Axle Bogey")
+                    .register();
+
 
     public static final BlockEntry<ConductorWhistleFlagBlock> CONDUCTOR_WHISTLE_FLAG =
         REGISTRATE.block("conductor_whistle", ConductorWhistleFlagBlock::new)

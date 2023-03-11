@@ -2,7 +2,7 @@ package com.railwayteam.railways.content.coupling.coupler;
 
 import com.railwayteam.railways.Railways;
 import com.railwayteam.railways.content.coupling.TrainUtils;
-import com.railwayteam.railways.content.custom_bogeys.monobogey.IPotentiallyUpsideDownBogeyBlock;
+import com.railwayteam.railways.content.custom_bogeys.IPotentiallyUpsideDownBogeyBlock;
 import com.railwayteam.railways.mixin.AccessorCarriageBogey;
 import com.railwayteam.railways.mixin.AccessorTrackTargetingBehavior;
 import com.railwayteam.railways.registry.CREdgePointTypes;

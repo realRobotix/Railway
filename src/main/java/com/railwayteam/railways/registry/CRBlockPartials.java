@@ -214,6 +214,10 @@ public class CRBlockPartials {
         MONOBOGEY_FRAME = block("bogey/monorail/frame"),
         MONOBOGEY_WHEEL = block("bogey/monorail/wheel");
 
+    public static final PartialModel
+    SINGLEAXLE_FRAME = block("bogey/singleaxle/frame"),
+    SINGLEAXLE_WHEEL = block("bogey/singleaxle/wheel");;
+
     public static final PartialModel DIESEL_STACK_FAN = block("smokestack/block_diesel_fan");
 
     private static PartialModel createBlock(String path) {
