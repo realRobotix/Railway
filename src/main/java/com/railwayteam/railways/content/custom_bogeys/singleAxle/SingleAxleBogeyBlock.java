@@ -49,13 +49,13 @@ import java.util.EnumSet;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class singleAxleBogeyBlock extends Block implements IPotentiallyUpsideDownBogeyBlock, ITE<singleAxleBogeyTileEntity>, ProperWaterloggedBlock, ISpecialBlockItemRequirement {
+public class SingleAxleBogeyBlock extends Block implements IPotentiallyUpsideDownBogeyBlock, ITE<SingleAxleBogeyTileEntity>, ProperWaterloggedBlock, ISpecialBlockItemRequirement {
 
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
 
     protected final boolean upsideDown;
 
-    public singleAxleBogeyBlock(Properties pProperties, boolean upsideDown) {
+    public SingleAxleBogeyBlock(Properties pProperties, boolean upsideDown) {
         super(pProperties);
         registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false));
         this.upsideDown = upsideDown;
@@ -198,12 +198,12 @@ public class singleAxleBogeyBlock extends Block implements IPotentiallyUpsideDow
     }
 
     @Override
-    public Class<singleAxleBogeyTileEntity> getTileEntityClass() {
-        return singleAxleBogeyTileEntity.class;
+    public Class<SingleAxleBogeyTileEntity> getTileEntityClass() {
+        return SingleAxleBogeyTileEntity.class;
     }
 
     @Override
-    public BlockEntityType<? extends singleAxleBogeyTileEntity> getTileEntityType() {
+    public BlockEntityType<? extends SingleAxleBogeyTileEntity> getTileEntityType() {
         return CRBlockEntities.SINGLEAXLE_BOGEY.get();
     }
 

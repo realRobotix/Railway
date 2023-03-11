@@ -6,8 +6,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
-public class singleAxleBogeyTileEntity extends StandardBogeyTileEntity {
-    public singleAxleBogeyTileEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+public class SingleAxleBogeyTileEntity extends StandardBogeyTileEntity {
+    public SingleAxleBogeyTileEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }
 

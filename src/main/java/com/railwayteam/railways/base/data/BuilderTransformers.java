@@ -1,12 +1,8 @@
 package com.railwayteam.railways.base.data;
 
 import com.railwayteam.railways.content.custom_bogeys.monobogey.MonoBogeyBlock;
-import com.railwayteam.railways.content.custom_bogeys.singleAxle.singleAxleBogeyBlock;
-import com.railwayteam.railways.registry.CRBlocks;
+import com.railwayteam.railways.content.custom_bogeys.singleAxle.SingleAxleBogeyBlock;
 import com.simibubi.create.AllBlocks;
-import com.simibubi.create.Create;
-import com.simibubi.create.content.logistics.trains.IBogeyBlock;
-import com.simibubi.create.content.logistics.trains.track.StandardBogeyBlock;
 import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.builders.BlockBuilder;
@@ -22,16 +18,16 @@ public class BuilderTransformers {
             .properties(p -> p.noOcclusion())
             .transform(pickaxeOnly())
             .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, s -> p.models()
-                .getExistingFile(p.modLoc("block/bogey/monorail/top" + (upsideDown ? "_upside_down" : "")))))
+                .getExistingFile(p.modLoc("block/bogey/top" + (upsideDown ? "_upside_down" : "")))))
             .loot((p, l) -> p.dropOther(l, AllBlocks.RAILWAY_CASING.get()));
     }
-    public static <B extends singleAxleBogeyBlock, P> NonNullUnaryOperator<BlockBuilder<B, P>> singleaxlebogey(boolean upsideDown) {
+    public static <B extends SingleAxleBogeyBlock, P> NonNullUnaryOperator<BlockBuilder<B, P>> singleaxlebogey(boolean upsideDown) {
         return b -> b.initialProperties(SharedProperties::softMetal)
                 .properties(p -> p.sound(SoundType.NETHERITE_BLOCK))
                 .properties(p -> p.noOcclusion())
                 .transform(pickaxeOnly())
                 .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, s -> p.models()
-                        .getExistingFile(p.modLoc("block/bogey/singleaxle/frame" + (upsideDown ? "_upside_down" : "")))))
+                        .getExistingFile(p.modLoc("block/bogey/top" + (upsideDown ? "_upside_down" : "")))))
                 .loot((p, l) -> p.dropOther(l, AllBlocks.RAILWAY_CASING.get()));
     }
 }

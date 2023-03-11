@@ -1,10 +1,9 @@
 {
 	"parent": "block/block",
 	"loader": "forge:obj",
-	"flip-v": true,
+	"flip_v": false,
 	"model": "railways:models/block/bogey/singleaxle/frame.obj",
 	"textures": {
-		"singleaxle": "railways:block/singleaxle/singleaxlebogey",
-		"top": "railways:block/singleaxle/top"
+		"singleaxle": "railways:block/singleaxle/singleaxle_bogey"
 	}
 }

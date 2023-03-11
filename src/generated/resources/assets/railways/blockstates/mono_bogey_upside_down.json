@@ -1,18 +1,18 @@
 {
   "variants": {
     "axis=x,waterlogged=false": {
-      "model": "railways:block/bogey/monorail/top_upside_down",
+      "model": "railways:block/bogey/top_upside_down",
       "y": 90
     },
     "axis=z,waterlogged=false": {
-      "model": "railways:block/bogey/monorail/top_upside_down"
+      "model": "railways:block/bogey/top_upside_down"
     },
     "axis=x,waterlogged=true": {
-      "model": "railways:block/bogey/monorail/top_upside_down",
+      "model": "railways:block/bogey/top_upside_down",
       "y": 90
     },
     "axis=z,waterlogged=true": {
-      "model": "railways:block/bogey/monorail/top_upside_down"
+      "model": "railways:block/bogey/top_upside_down"
     }
   }
 }

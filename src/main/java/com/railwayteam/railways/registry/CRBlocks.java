@@ -8,7 +8,7 @@ import com.railwayteam.railways.content.coupling.TrackCouplerDisplaySource;
 import com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlock;
 import com.railwayteam.railways.content.coupling.coupler.TrackCouplerBlockItem;
 import com.railwayteam.railways.content.custom_bogeys.monobogey.MonoBogeyBlock;
-import com.railwayteam.railways.content.custom_bogeys.singleAxle.singleAxleBogeyBlock;
+import com.railwayteam.railways.content.custom_bogeys.singleAxle.SingleAxleBogeyBlock;
 import com.railwayteam.railways.content.custom_tracks.CustomTrackBlock;
 import com.railwayteam.railways.content.custom_tracks.CustomTrackBlockStateGenerator;
 import com.railwayteam.railways.content.custom_tracks.TrackMaterial;
@@ -25,9 +25,6 @@ import com.simibubi.create.AllMovementBehaviours;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.AllSections;
 import com.simibubi.create.content.contraptions.components.structureMovement.MovementBehaviour;
-import com.simibubi.create.content.curiosities.girder.ConnectedGirderModel;
-import com.simibubi.create.content.curiosities.girder.GirderBlock;
-import com.simibubi.create.content.curiosities.girder.GirderBlockStateGenerator;
 import com.simibubi.create.content.logistics.trains.track.TrackBlockItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -48,7 +45,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 
-import static com.simibubi.create.Create.REGISTRATE;
 import static com.simibubi.create.content.logistics.block.display.AllDisplayBehaviours.assignDataBehaviour;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOnly;
@@ -191,8 +187,8 @@ public class CRBlocks {
             .lang("Upside Down Monorail Bogey")
             .register();
 
-    public static final BlockEntry<singleAxleBogeyBlock> SINGLEAXLE_BOGEY =
-            REGISTRATE.block("singleaxle_bogey", p -> new singleAxleBogeyBlock(p, false))
+    public static final BlockEntry<SingleAxleBogeyBlock> SINGLEAXLE_BOGEY =
+            REGISTRATE.block("singleaxle_bogey", p -> new SingleAxleBogeyBlock(p, false))
                     .properties(p -> p.color(MaterialColor.PODZOL))
                     .transform(BuilderTransformers.singleaxlebogey(false))
                     .lang("Single Axle Bogey")
