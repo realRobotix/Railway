@@ -1,5 +1,6 @@
 
 <h1 align="center">Create Steam 'n Rails</h1>
+<h2 align="center">This was Razziel messing around, and should NOT be merged. I repeat. It should NOT be merged.</h2>
 <br><br>
 <img src="https://discordapp.com/api/guilds/706277846389227612/widget.png?style=banner3" alt="Discord Banner 3" align="right"/>
 
