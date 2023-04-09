@@ -17,23 +17,11 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v3
 
-      - name: send building message to Discord
-        if: github.event_name != 'pull_request'
-        uses: realRobotix/action-discord-notifier@release-master
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message-title: "Building mod from ${{ github.ref }}"
-
       - name: setup Java ${{ matrix.java }}
         uses: actions/setup-java@v3
         with:
           java-version: ${{ matrix.java }}
           distribution: temurin
-
-      - name: setup Gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          cache-read-only: false
 
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
@@ -45,15 +33,7 @@ jobs:
         run: ./gradlew moveBuiltJars
 
       - name: capture build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
           path: jars
-
-      - name: upload production builds to Discord
-        if: github.event_name != 'pull_request'
-        uses: sinshutu/upload-to-discord@master
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        with:
-          args: ./jars/*.jar
